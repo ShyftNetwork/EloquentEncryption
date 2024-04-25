@@ -157,4 +157,31 @@ class EloquentEncryption implements Encrypter
     {
         return $this->handler->getPrivateKey();
     }
+    
+    /**
+     * Get all of the encryption keys.
+     *
+     * @return array
+     */
+    public function getAllKeys()
+    {
+        // just fix for laravel 11
+        // return [
+        //     'public' => $this->handler->getPublicKey(),
+        //     'private' => $this->handler->getPrivateKey(),
+        // ];
+        return [];
+    }
+
+    /**
+     * Get the previous encryption keys.
+     *
+     * @return array
+     */
+    public function getPreviousKeys()
+    {
+        // just fix for laravel 11
+        return [];
+    }
+
 }
